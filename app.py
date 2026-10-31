@@ -1,17 +1,27 @@
-from flask import Flask, send_from_directory
-from pathlib import Path
 
-app = Flask(__name__)
+from flask import Flask, request, jsonify, send_from_directory
+from modules.url_analysis import analyze_url
 
-# Locate the frontend folder beside this file
-BASE_DIR = Path(__file__).resolve().parent
-FRONTEND_DIR = BASE_DIR / "frontend"
-
+app = Flask(__name__, static_folder="frontend")
 
 @app.route("/")
 def home():
-    return send_from_directory(FRONTEND_DIR, "index.html")
+    return send_from_directory("frontend", "index.html")
+
+
+@app.route("/analyze", methods=["POST"])
+def analyze():
+
+    data = request.get_json()
+    url = data.get("url", "").strip()
+
+    if not url:
+        return jsonify({"error": "Please enter a URL"}), 400
+
+    result = analyze_url(url)
+
+    return jsonify(result)
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True)

@@ -94,27 +94,21 @@
             <p>Paste a URL or message to get started.</p>
 
             <form id="analysisForm">
-                <textarea id="content"
-                    placeholder="Paste a suspicious URL or message..."
+                <textarea id="urlInput"
+                    placeholder="Paste a suspicious URL..."
                     required></textarea>
                 <br>
                 <button type="submit">Analyze</button>
             </form>
 
-            <p id="message" class="note">
-                Prototype preview: analysis will be connected next.
+            <p id="result" class="note">
+                    Enter a URL and click Analyze to check its format.
             </p>
         </section>
 
         <footer>Team 21 | Phishing Detection Project</footer>
     </main>
 
-    <script>
-        document.getElementById("analysisForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            document.getElementById("message").textContent =
-                "Homepage working! Phishing analysis will be connected in the next step.";
-        });
-    </script>
+   <script src="/frontend/script.js"></script>
 </body>
 </html>
