@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 21 | Phishing Detection</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fc;
+            color: #172554;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: white;
+            border-bottom: 1px solid #dbe3f0;
+        }
+
+        header h2 { margin: 0; color: #174ea6; }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #334155;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 65px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .panel {
+            margin-top: 30px;
+            padding: 35px;
+            background: white;
+            border: 1px solid #dbe3f0;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px #17255410;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 130px;
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 18px;
+            padding: 13px 25px;
+            color: white;
+            background: #174ea6;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .note {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        footer { margin-top: 30px; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>🛡️ Team 21</h2>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#analyze">Analyze</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Multimodal AI Phishing Detection Engine</h1>
+        <p>Identify suspicious URLs and phishing messages.</p>
+
+        <section class="panel" id="analyze">
+            <h2>Analyze Suspicious Content</h2>
+            <p>Paste a URL or message to get started.</p>
+
+            <form id="analysisForm">
+                <textarea id="urlInput"
+                    placeholder="Paste a suspicious URL..."
+                    required></textarea>
+                <br>
+                <button type="submit">Analyze</button>
+            </form>
+
+            <p id="result" class="note">
+                    Enter a URL and click Analyze to check its format.
+            </p>
+        </section>
+
+        <footer>Team 21 | Phishing Detection Project</footer>
+    </main>
+
+   <script src="/frontend/script.js"></script>
+</body>
+</html>
